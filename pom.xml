@@ -6,7 +6,7 @@
 
     <groupId>pl.feature.toggle.service</groupId>
     <artifactId>feature-toggle-contracts</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>${revision}</version>
     <packaging>jar</packaging>
     <name>contracts</name>
     <distributionManagement>
@@ -21,6 +21,7 @@
     </distributionManagement>
 
     <properties>
+        <revision>1.0.0-SNAPSHOT</revision>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
