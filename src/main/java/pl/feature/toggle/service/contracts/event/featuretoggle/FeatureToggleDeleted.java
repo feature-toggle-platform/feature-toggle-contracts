@@ -1,7 +1,7 @@
-package pl.feature.toggle.service.event.featuretoggle;
+package pl.feature.toggle.service.contracts.event.featuretoggle;
 
-import pl.feature.toggle.service.shared.EventId;
-import pl.feature.toggle.service.shared.IntegrationEvent;
+import pl.feature.toggle.service.contracts.shared.EventId;
+import pl.feature.toggle.service.contracts.shared.IntegrationEvent;
 import lombok.Builder;
 
 import java.util.UUID;

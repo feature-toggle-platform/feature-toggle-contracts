@@ -1,4 +1,4 @@
-package pl.feature.toggle.service.topic;
+package pl.feature.toggle.service.contracts.topic;
 
 import lombok.Getter;
 import lombok.experimental.Accessors;

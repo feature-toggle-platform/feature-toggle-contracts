@@ -1,14 +1,14 @@
-package pl.feature.toggle.service.event.featuretoggle;
+package pl.feature.toggle.service.contracts.event.featuretoggle;
 
-import pl.feature.toggle.service.shared.EventId;
-import pl.feature.toggle.service.shared.IntegrationEvent;
+import pl.feature.toggle.service.contracts.shared.EventId;
+import pl.feature.toggle.service.contracts.shared.IntegrationEvent;
 import lombok.Builder;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Builder
-public record FeatureToggleCreated(
+public record FeatureToggleUpdated(
         EventId eventId,
         UUID id,
         UUID projectId,
@@ -21,9 +21,10 @@ public record FeatureToggleCreated(
         LocalDateTime updatedAt
 ) implements IntegrationEvent {
 
-    public static FeatureToggleCreatedBuilder featureToggleCreatedEventBuilder() {
-        return new FeatureToggleCreatedBuilder()
+    public static FeatureToggleUpdatedBuilder featureToggleUpdatedEventBuilder() {
+        return new FeatureToggleUpdatedBuilder()
                 .eventId(EventId.create());
     }
 
 }
+

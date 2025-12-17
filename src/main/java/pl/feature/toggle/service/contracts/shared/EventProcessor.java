@@ -1,4 +1,4 @@
-package pl.feature.toggle.service.shared;
+package pl.feature.toggle.service.contracts.shared;
 
 import java.util.function.Consumer;
 
