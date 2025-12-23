@@ -3,6 +3,7 @@ package pl.feature.toggle.service.contracts.event.projects;
 import pl.feature.toggle.service.contracts.shared.EventId;
 import pl.feature.toggle.service.contracts.shared.IntegrationEvent;
 import lombok.Builder;
+import pl.feature.toggle.service.contracts.shared.Metadata;
 
 import java.util.UUID;
 
@@ -12,8 +13,7 @@ public record EnvironmentCreated(
         UUID environmentId,
         UUID projectId,
         String environmentName,
-        String actorId,
-        String username
+        Metadata metadata
 ) implements IntegrationEvent {
 
     public static final String EVENT_TYPE = EnvironmentCreated.class.getName();

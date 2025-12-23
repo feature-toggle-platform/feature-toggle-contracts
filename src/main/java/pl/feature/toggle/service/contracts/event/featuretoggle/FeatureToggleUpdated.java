@@ -3,6 +3,7 @@ package pl.feature.toggle.service.contracts.event.featuretoggle;
 import pl.feature.toggle.service.contracts.shared.EventId;
 import pl.feature.toggle.service.contracts.shared.IntegrationEvent;
 import lombok.Builder;
+import pl.feature.toggle.service.contracts.shared.Metadata;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -19,8 +20,7 @@ public record FeatureToggleUpdated(
         String value,
         LocalDateTime createdAt,
         LocalDateTime updatedAt,
-        String actorId,
-        String username
+        Metadata metadata
 ) implements IntegrationEvent {
 
     public static FeatureToggleUpdatedBuilder featureToggleUpdatedEventBuilder() {

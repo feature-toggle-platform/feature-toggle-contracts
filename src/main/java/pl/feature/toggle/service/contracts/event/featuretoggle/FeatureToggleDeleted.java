@@ -3,6 +3,7 @@ package pl.feature.toggle.service.contracts.event.featuretoggle;
 import pl.feature.toggle.service.contracts.shared.EventId;
 import pl.feature.toggle.service.contracts.shared.IntegrationEvent;
 import lombok.Builder;
+import pl.feature.toggle.service.contracts.shared.Metadata;
 
 import java.util.UUID;
 
@@ -10,8 +11,7 @@ import java.util.UUID;
 public record FeatureToggleDeleted(
         EventId eventId,
         UUID id,
-        String actorId,
-        String username
+        Metadata metadata
 ) implements IntegrationEvent {
 
     public static FeatureToggleDeletedBuilder featureToggleDeletedEvent() {
