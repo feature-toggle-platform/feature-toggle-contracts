@@ -25,6 +25,7 @@ public record FeatureToggleCreated(
 
     public static FeatureToggleCreatedBuilder featureToggleCreatedEventBuilder() {
         return new FeatureToggleCreatedBuilder()
+                .metadata(Metadata.empty())
                 .eventId(EventId.create());
     }
 

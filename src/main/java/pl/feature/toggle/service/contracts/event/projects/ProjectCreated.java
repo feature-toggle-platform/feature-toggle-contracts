@@ -19,6 +19,7 @@ public record ProjectCreated(
 
     public static ProjectCreatedBuilder projectCreatedEventBuilder() {
         return new ProjectCreatedBuilder()
+                .metadata(Metadata.empty())
                 .eventId(EventId.create());
     }
 }

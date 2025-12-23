@@ -20,6 +20,7 @@ public record EnvironmentCreated(
 
     public static EnvironmentCreatedBuilder environmentCreatedEventBuilder() {
         return new EnvironmentCreatedBuilder()
+                .metadata(Metadata.empty())
                 .eventId(EventId.create());
     }
 

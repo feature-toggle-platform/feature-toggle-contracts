@@ -15,7 +15,9 @@ public record FeatureToggleDeleted(
 ) implements IntegrationEvent {
 
     public static FeatureToggleDeletedBuilder featureToggleDeletedEvent() {
-        return new FeatureToggleDeletedBuilder();
+        return new FeatureToggleDeletedBuilder()
+                .metadata(Metadata.empty())
+                .eventId(EventId.create());
     }
 
 }

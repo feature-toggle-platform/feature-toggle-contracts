@@ -25,6 +25,7 @@ public record FeatureToggleUpdated(
 
     public static FeatureToggleUpdatedBuilder featureToggleUpdatedEventBuilder() {
         return new FeatureToggleUpdatedBuilder()
+                .metadata(Metadata.empty())
                 .eventId(EventId.create());
     }
 
