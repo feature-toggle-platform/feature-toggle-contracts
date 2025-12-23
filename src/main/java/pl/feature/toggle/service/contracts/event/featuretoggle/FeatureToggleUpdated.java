@@ -18,7 +18,9 @@ public record FeatureToggleUpdated(
         String type,
         String value,
         LocalDateTime createdAt,
-        LocalDateTime updatedAt
+        LocalDateTime updatedAt,
+        String actorId,
+        String username
 ) implements IntegrationEvent {
 
     public static FeatureToggleUpdatedBuilder featureToggleUpdatedEventBuilder() {

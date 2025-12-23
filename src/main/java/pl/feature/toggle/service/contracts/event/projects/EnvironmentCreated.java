@@ -11,7 +11,9 @@ public record EnvironmentCreated(
         EventId eventId,
         UUID environmentId,
         UUID projectId,
-        String environmentName
+        String environmentName,
+        String actorId,
+        String username
 ) implements IntegrationEvent {
 
     public static final String EVENT_TYPE = EnvironmentCreated.class.getName();

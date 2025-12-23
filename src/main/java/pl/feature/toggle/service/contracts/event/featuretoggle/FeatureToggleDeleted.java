@@ -9,7 +9,9 @@ import java.util.UUID;
 @Builder
 public record FeatureToggleDeleted(
         EventId eventId,
-        UUID id
+        UUID id,
+        String actorId,
+        String username
 ) implements IntegrationEvent {
 
     public static FeatureToggleDeletedBuilder featureToggleDeletedEvent() {

@@ -10,7 +10,9 @@ import java.util.UUID;
 public record ProjectCreated(
         EventId eventId,
         UUID projectId,
-        String projectName
+        String projectName,
+        String actorId,
+        String username
 ) implements IntegrationEvent {
 
     public static final String EVENT_TYPE = ProjectCreated.class.getName();
