@@ -1,5 +1,6 @@
 package pl.feature.toggle.service.contracts.event.featuretoggle;
 
+import pl.feature.toggle.service.contracts.shared.Changes;
 import pl.feature.toggle.service.contracts.shared.EventId;
 import pl.feature.toggle.service.contracts.shared.IntegrationEvent;
 import lombok.Builder;
@@ -20,7 +21,8 @@ public record FeatureToggleUpdated(
         String value,
         LocalDateTime createdAt,
         LocalDateTime updatedAt,
-        Metadata metadata
+        Metadata metadata,
+        Changes changes
 ) implements IntegrationEvent {
 
     public static FeatureToggleUpdatedBuilder featureToggleUpdatedEventBuilder() {
