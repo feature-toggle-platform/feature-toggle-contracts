@@ -11,6 +11,8 @@ import java.util.UUID;
 public record FeatureToggleDeleted(
         EventId eventId,
         UUID id,
+        UUID projectId,
+        UUID environmentId,
         Metadata metadata
 ) implements IntegrationEvent {
 
