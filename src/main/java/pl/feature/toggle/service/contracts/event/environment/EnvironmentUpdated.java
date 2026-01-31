@@ -1,25 +1,27 @@
-package pl.feature.toggle.service.contracts.event.projects;
+package pl.feature.toggle.service.contracts.event.environment;
 
+import lombok.Builder;
 import pl.feature.toggle.service.contracts.shared.EventId;
 import pl.feature.toggle.service.contracts.shared.IntegrationEvent;
-import lombok.Builder;
 import pl.feature.toggle.service.contracts.shared.Metadata;
 
 import java.util.UUID;
 
 @Builder
-public record ProjectCreated(
+public record EnvironmentUpdated(
         EventId eventId,
+        UUID environmentId,
         UUID projectId,
-        String projectName,
+        String environmentName,
         Metadata metadata
 ) implements IntegrationEvent {
 
-    public static final String EVENT_TYPE = ProjectCreated.class.getName();
+    public static final String EVENT_TYPE = EnvironmentUpdated.class.getName();
 
-    public static ProjectCreatedBuilder projectCreatedEventBuilder() {
-        return new ProjectCreatedBuilder()
+    public static EnvironmentUpdatedBuilder environmentUpdatedEventBuilder() {
+        return new EnvironmentUpdatedBuilder()
                 .metadata(Metadata.empty())
                 .eventId(EventId.create());
     }
+
 }

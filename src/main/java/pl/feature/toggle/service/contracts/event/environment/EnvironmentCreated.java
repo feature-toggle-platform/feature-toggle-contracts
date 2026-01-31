@@ -1,4 +1,4 @@
-package pl.feature.toggle.service.contracts.event.featuretoggle;
+package pl.feature.toggle.service.contracts.event.environment;
 
 import pl.feature.toggle.service.contracts.shared.EventId;
 import pl.feature.toggle.service.contracts.shared.IntegrationEvent;
@@ -8,16 +8,20 @@ import pl.feature.toggle.service.contracts.shared.Metadata;
 import java.util.UUID;
 
 @Builder
-public record FeatureToggleDeleted(
+public record EnvironmentCreated(
         EventId eventId,
-        UUID id,
-        UUID projectId,
         UUID environmentId,
+        UUID projectId,
+        String environmentName,
+        String type,
+        String status,
         Metadata metadata
 ) implements IntegrationEvent {
 
-    public static FeatureToggleDeletedBuilder featureToggleDeletedEventBuilder() {
-        return new FeatureToggleDeletedBuilder()
+    public static final String EVENT_TYPE = EnvironmentCreated.class.getName();
+
+    public static EnvironmentCreatedBuilder environmentCreatedEventBuilder() {
+        return new EnvironmentCreatedBuilder()
                 .metadata(Metadata.empty())
                 .eventId(EventId.create());
     }

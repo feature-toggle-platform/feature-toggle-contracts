@@ -1,4 +1,4 @@
-package pl.feature.toggle.service.contracts.event.projects;
+package pl.feature.toggle.service.contracts.event.project;
 
 import pl.feature.toggle.service.contracts.shared.EventId;
 import pl.feature.toggle.service.contracts.shared.IntegrationEvent;
@@ -8,20 +8,19 @@ import pl.feature.toggle.service.contracts.shared.Metadata;
 import java.util.UUID;
 
 @Builder
-public record EnvironmentCreated(
+public record ProjectCreated(
         EventId eventId,
-        UUID environmentId,
         UUID projectId,
-        String environmentName,
-        Metadata metadata
+        String projectName,
+        Metadata metadata,
+        String status
 ) implements IntegrationEvent {
 
-    public static final String EVENT_TYPE = EnvironmentCreated.class.getName();
+    public static final String EVENT_TYPE = ProjectCreated.class.getName();
 
-    public static EnvironmentCreatedBuilder environmentCreatedEventBuilder() {
-        return new EnvironmentCreatedBuilder()
+    public static ProjectCreatedBuilder projectCreatedEventBuilder() {
+        return new ProjectCreatedBuilder()
                 .metadata(Metadata.empty())
                 .eventId(EventId.create());
     }
-
 }
