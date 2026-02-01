@@ -1,6 +1,7 @@
 package pl.feature.toggle.service.contracts.event.environment;
 
 import lombok.Builder;
+import pl.feature.toggle.service.contracts.shared.Changes;
 import pl.feature.toggle.service.contracts.shared.EventId;
 import pl.feature.toggle.service.contracts.shared.IntegrationEvent;
 import pl.feature.toggle.service.contracts.shared.Metadata;
@@ -13,7 +14,8 @@ public record EnvironmentUpdated(
         UUID environmentId,
         UUID projectId,
         String environmentName,
-        Metadata metadata
+        Metadata metadata,
+        Changes changes
 ) implements IntegrationEvent {
 
     public static final String EVENT_TYPE = EnvironmentUpdated.class.getName();
