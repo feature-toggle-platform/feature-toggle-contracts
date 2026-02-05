@@ -18,9 +18,11 @@ public record FeatureToggleCreated(
         String description,
         String type,
         String value,
+        String status,
         LocalDateTime createdAt,
         LocalDateTime updatedAt,
-        Metadata metadata
+        Metadata metadata,
+        long revision
 ) implements IntegrationEvent {
 
     public static FeatureToggleCreatedBuilder featureToggleCreatedEventBuilder() {

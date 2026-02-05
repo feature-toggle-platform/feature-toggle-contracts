@@ -15,7 +15,8 @@ public record EnvironmentTypeChanged(
         UUID projectId,
         String type,
         Metadata metadata,
-        Changes changes
+        Changes changes,
+        long revision
 ) implements IntegrationEvent {
 
     public static final String EVENT_TYPE = EnvironmentTypeChanged.class.getName();

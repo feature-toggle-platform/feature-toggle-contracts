@@ -13,7 +13,8 @@ public record ProjectCreated(
         UUID projectId,
         String projectName,
         Metadata metadata,
-        String status
+        String status,
+        long revision
 ) implements IntegrationEvent {
 
     public static final String EVENT_TYPE = ProjectCreated.class.getName();

@@ -15,7 +15,8 @@ public record EnvironmentCreated(
         String environmentName,
         String type,
         String status,
-        Metadata metadata
+        Metadata metadata,
+        long revision
 ) implements IntegrationEvent {
 
     public static final String EVENT_TYPE = EnvironmentCreated.class.getName();

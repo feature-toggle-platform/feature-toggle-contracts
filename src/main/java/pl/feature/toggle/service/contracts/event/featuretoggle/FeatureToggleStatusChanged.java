@@ -1,25 +1,29 @@
 package pl.feature.toggle.service.contracts.event.featuretoggle;
 
+import lombok.Builder;
+import pl.feature.toggle.service.contracts.shared.Changes;
 import pl.feature.toggle.service.contracts.shared.EventId;
 import pl.feature.toggle.service.contracts.shared.IntegrationEvent;
-import lombok.Builder;
 import pl.feature.toggle.service.contracts.shared.Metadata;
 
 import java.util.UUID;
 
 @Builder
-public record FeatureToggleDeleted(
+public record FeatureToggleStatusChanged(
         EventId eventId,
         UUID id,
         UUID projectId,
         UUID environmentId,
-        Metadata metadata
+        Changes changes,
+        String status,
+        Metadata metadata,
+        long revision
 ) implements IntegrationEvent {
+    public static final String EVENT_TYPE = FeatureToggleStatusChanged.class.getName();
 
-    public static FeatureToggleDeletedBuilder featureToggleDeletedEventBuilder() {
-        return new FeatureToggleDeletedBuilder()
+    public static FeatureToggleStatusChangedBuilder featureToggleStatusChangedBuilder() {
+        return new FeatureToggleStatusChangedBuilder()
                 .metadata(Metadata.empty())
                 .eventId(EventId.create());
     }
-
 }

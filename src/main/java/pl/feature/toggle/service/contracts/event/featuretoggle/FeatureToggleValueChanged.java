@@ -1,4 +1,4 @@
-package pl.feature.toggle.service.contracts.event.environment;
+package pl.feature.toggle.service.contracts.event.featuretoggle;
 
 import lombok.Builder;
 import pl.feature.toggle.service.contracts.shared.Changes;
@@ -9,22 +9,23 @@ import pl.feature.toggle.service.contracts.shared.Metadata;
 import java.util.UUID;
 
 @Builder
-public record EnvironmentUpdated(
+public record FeatureToggleValueChanged(
         EventId eventId,
-        UUID environmentId,
+        UUID id,
         UUID projectId,
-        String environmentName,
-        Metadata metadata,
+        UUID environmentId,
         Changes changes,
+        String type,
+        String value,
+        Metadata metadata,
         long revision
 ) implements IntegrationEvent {
 
-    public static final String EVENT_TYPE = EnvironmentUpdated.class.getName();
+    public static final String EVENT_TYPE = FeatureToggleValueChanged.class.getName();
 
-    public static EnvironmentUpdatedBuilder environmentUpdatedEventBuilder() {
-        return new EnvironmentUpdatedBuilder()
+    public static FeatureToggleValueChangedBuilder featureToggleValueChangedBuilder() {
+        return new FeatureToggleValueChangedBuilder()
                 .metadata(Metadata.empty())
                 .eventId(EventId.create());
     }
-
 }

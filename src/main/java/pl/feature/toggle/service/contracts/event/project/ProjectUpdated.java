@@ -15,7 +15,8 @@ public record ProjectUpdated(
         String projectName,
         Metadata metadata,
         String status,
-        Changes changes
+        Changes changes,
+        long revision
 ) implements IntegrationEvent {
 
     public static final String EVENT_TYPE = ProjectUpdated.class.getName();

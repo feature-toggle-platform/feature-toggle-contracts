@@ -22,7 +22,8 @@ public record FeatureToggleUpdated(
         LocalDateTime createdAt,
         LocalDateTime updatedAt,
         Metadata metadata,
-        Changes changes
+        Changes changes,
+        long revision
 ) implements IntegrationEvent {
 
     public static FeatureToggleUpdatedBuilder featureToggleUpdatedEventBuilder() {
