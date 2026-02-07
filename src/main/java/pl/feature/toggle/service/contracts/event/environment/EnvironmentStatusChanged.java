@@ -21,7 +21,7 @@ public record EnvironmentStatusChanged(
 
     public static final String EVENT_TYPE = EnvironmentStatusChanged.class.getName();
 
-    public static EnvironmentStatusChangedBuilder environmentStatusChangedBuilder() {
+    public static EnvironmentStatusChangedBuilder environmentStatusChangedEventBuilder() {
         return new EnvironmentStatusChangedBuilder()
                 .metadata(Metadata.empty())
                 .eventId(EventId.create());
