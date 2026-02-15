@@ -17,8 +17,6 @@ public record FeatureToggleUpdated(
         UUID environmentId,
         String name,
         String description,
-        String type,
-        String value,
         LocalDateTime createdAt,
         LocalDateTime updatedAt,
         Metadata metadata,
