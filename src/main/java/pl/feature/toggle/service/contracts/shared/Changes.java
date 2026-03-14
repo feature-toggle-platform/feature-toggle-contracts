@@ -18,6 +18,10 @@ public record Changes(
         return new Changes(List.of(changes));
     }
 
+    public static Changes of(String field, String before, String after) {
+        return new Changes(List.of(buildChange(field, before, after)));
+    }
+
     public record Change(
             String field,
             String before,

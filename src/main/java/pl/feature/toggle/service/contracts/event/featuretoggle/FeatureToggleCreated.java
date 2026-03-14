@@ -1,8 +1,8 @@
 package pl.feature.toggle.service.contracts.event.featuretoggle;
 
+import lombok.Builder;
 import pl.feature.toggle.service.contracts.shared.EventId;
 import pl.feature.toggle.service.contracts.shared.IntegrationEvent;
-import lombok.Builder;
 import pl.feature.toggle.service.contracts.shared.Metadata;
 
 import java.time.LocalDateTime;
@@ -12,7 +12,6 @@ import java.util.UUID;
 public record FeatureToggleCreated(
         EventId eventId,
         UUID id,
-        UUID projectId,
         UUID environmentId,
         String name,
         String description,

@@ -14,7 +14,6 @@ public class FakeFeatureToggleStatusChangedBuilder {
 
     private EventId eventId;
     private UUID id;
-    private UUID projectId;
     private UUID environmentId;
     private Changes changes;
     private String status;
@@ -26,7 +25,6 @@ public class FakeFeatureToggleStatusChangedBuilder {
     private FakeFeatureToggleStatusChangedBuilder() {
         this.eventId = new EventId(UUID.randomUUID());
         this.id = UUID.randomUUID();
-        this.projectId = UUID.randomUUID();
         this.environmentId = UUID.randomUUID();
         this.changes = Changes.empty();
         this.status = UUID.randomUUID().toString();
@@ -47,11 +45,6 @@ public class FakeFeatureToggleStatusChangedBuilder {
 
     public FakeFeatureToggleStatusChangedBuilder withId(UUID id) {
         this.id = id;
-        return this;
-    }
-
-    public FakeFeatureToggleStatusChangedBuilder withProjectId(UUID projectId) {
-        this.projectId = projectId;
         return this;
     }
 
@@ -92,7 +85,7 @@ public class FakeFeatureToggleStatusChangedBuilder {
 
     public FeatureToggleStatusChanged build() {
         return new FeatureToggleStatusChanged(
-                eventId, id, projectId, environmentId,
+                eventId, id, environmentId,
                 changes, status, metadata, createdAt, updatedAt, revision
         );
     }

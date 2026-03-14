@@ -14,7 +14,6 @@ public class FakeFeatureToggleValueChangedBuilder {
 
     private EventId eventId;
     private UUID id;
-    private UUID projectId;
     private UUID environmentId;
     private Changes changes;
     private String type;
@@ -27,7 +26,6 @@ public class FakeFeatureToggleValueChangedBuilder {
     private FakeFeatureToggleValueChangedBuilder() {
         this.eventId = new EventId(UUID.randomUUID());
         this.id = UUID.randomUUID();
-        this.projectId = UUID.randomUUID();
         this.environmentId = UUID.randomUUID();
         this.changes = Changes.empty();
         this.type = UUID.randomUUID().toString();
@@ -49,11 +47,6 @@ public class FakeFeatureToggleValueChangedBuilder {
 
     public FakeFeatureToggleValueChangedBuilder withId(UUID id) {
         this.id = id;
-        return this;
-    }
-
-    public FakeFeatureToggleValueChangedBuilder withProjectId(UUID projectId) {
-        this.projectId = projectId;
         return this;
     }
 
@@ -99,7 +92,7 @@ public class FakeFeatureToggleValueChangedBuilder {
 
     public FeatureToggleValueChanged build() {
         return new FeatureToggleValueChanged(
-                eventId, id, projectId, environmentId,
+                eventId, id, environmentId,
                 changes, type, value, metadata,
                 createdAt, updatedAt, revision
         );

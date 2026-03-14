@@ -13,7 +13,6 @@ import java.util.UUID;
 public record FeatureToggleUpdated(
         EventId eventId,
         UUID id,
-        UUID projectId,
         UUID environmentId,
         String name,
         String description,
