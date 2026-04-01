@@ -10,9 +10,9 @@ public enum KafkaTopic {
     CONFIGURATION("feature-toggle-configuration-events"),
     FEATURE_TOGGLE("feature-toggle-events");
 
-    private final String topic;
+    private final String topicName;
 
     KafkaTopic(String topic) {
-        this.topic = topic;
+        this.topicName = topic;
     }
 }
