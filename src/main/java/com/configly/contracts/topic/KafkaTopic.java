@@ -7,8 +7,8 @@ import lombok.experimental.Accessors;
 @Accessors(fluent = true)
 public enum KafkaTopic {
 
-    CONFIGURATION("feature-toggle-configuration-events"),
-    FEATURE_TOGGLE("feature-toggle-events");
+    CONFIGURATION("configly-structure-events"),
+    FEATURE_TOGGLE("configly-toggle-events");
 
     private final String topicName;
 
